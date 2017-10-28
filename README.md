@@ -18,23 +18,12 @@ Each version of the site has been given two of the six vulnerabilities. (In othe
 ## Blue
 
 ### Vulnerability #1: SQL injection
-	The Blue site does not sanitize its data for retrieving salesman information. 
-	There's a lot of ways we could take advantage of this, for proof of concept, let's 
-	prove that we can cause the site to delay its response with a sleep command:
-	%27%20OR%20SLEEP(5)=0--%27 
-	Notice the developers were smart to filter the ' symbol, but not smart enough to filter
-	its encoded equivalents. 
-	This does in fact cause a delay of 5 seconds. We have proven that we can exploit this 
-	vulnerability. 
-	Note that the site defaults back to Daron Burke's info page, even when Irene's info
-	page is being displayed
-	A walkthrough can be found below:
-	<a href="https://imgur.com/z5OEPPb"><img src="https://i.imgur.com/z5OEPPb.gif" title="source: imgur.com" /></a>
+- The Blue site does not sanitize its data for retrieving salesman information. There's a lot of ways we could take advantage of this, for proof of concept, let's prove that we can cause the site to delay its response with a sleep command: %27%20OR%20SLEEP(5)=0--%27. Notice the developers were smart to filter the ' symbol, but not smart enough to filter its encoded equivalents. This does in fact cause a delay of 5 seconds. We have proven that we can exploit this vulnerability. Note that the site defaults back to Daron Burke's info page, even when Irene's info page is being displayed. A walkthrough can be found below:
+<a href="https://imgur.com/z5OEPPb"><img src="https://i.imgur.com/z5OEPPb.gif" title="source: imgur.com" /></a>
 	
 
 ### Vulnerability #2: Session Hijacking
-	After some testing with the provided script we find that the blue site does not 
-	regenerate session its session Id. To demonstrate how dangerous this can be, we will 
+- After some testing with the provided script we find that the blue site does not regenerate session its session Id. To demonstrate how dangerous this can be, we will 
 	use two browsers. On the left we have the unsuspecting "target" user, and on the right
 	we have the attacker. Once the target has logged in, we simulate stealing the session
 	ID using the provided script. We change the session ID in the attacker browser, and 
