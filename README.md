@@ -17,7 +17,7 @@ Each version of the site has been given two of the six vulnerabilities. (In othe
 
 ## Blue
 
-Vulnerability #1: SQL injection
+### Vulnerability #1: SQL injection
 	The Blue site does not sanitize its data for retrieving salesman information. 
 	There's a lot of ways we could take advantage of this, for proof of concept, let's 
 	prove that we can cause the site to delay its response with a sleep command:
@@ -32,7 +32,7 @@ Vulnerability #1: SQL injection
 	<a href="https://imgur.com/z5OEPPb"><img src="https://i.imgur.com/z5OEPPb.gif" title="source: imgur.com" /></a>
 	
 
-Vulnerability #2: Session Hijacking
+### Vulnerability #2: Session Hijacking
 	After some testing with the provided script we find that the blue site does not 
 	regenerate session its session Id. To demonstrate how dangerous this can be, we will 
 	use two browsers. On the left we have the unsuspecting "target" user, and on the right
@@ -46,7 +46,7 @@ Vulnerability #2: Session Hijacking
 
 ## Green
 
-Vulnerability #1: Username Enumeration
+### Vulnerability #1: Username Enumeration
 	The problem here is that there are noticeable differences between a login attempt 
 	that is made with a non-existent username and a valid username where only a bad 
 	password has been given. This gives important information to somebody who may be
@@ -55,7 +55,7 @@ Vulnerability #1: Username Enumeration
 	A walkthrough can be found below:
 	<a href="https://imgur.com/b02GmGD"><img src="https://i.imgur.com/b02GmGD.gif" title="source: imgur.com" /></a>
 
-Vulnerability #2: Cross-Site-Scripting
+### Vulnerability #2: Cross-Site-Scripting
 	A common place to look for this type of vulnerability would be 
 	a place in the site where a user is able to submit to a form. 
 	When we play around with the "Contact" page on the green site, we find that inputs 
@@ -71,7 +71,7 @@ Vulnerability #2: Cross-Site-Scripting
 
 ## Red
 
-Vulnerability #1: Insecure Direct Object Reference:
+### Vulnerability #1: Insecure Direct Object Reference:
 	In the "Find a Salesperson" page we are given a list of salespeople and links to more 
 	information about them. 
 	Clicking on one of the links brings up a new page with a URL like the following:
@@ -86,7 +86,7 @@ Vulnerability #1: Insecure Direct Object Reference:
 	
 	
 
-Vulnerability #2: Cross-Site Request Forgery
+### Vulnerability #2: Cross-Site Request Forgery
 	First we will act as a regular website visitor, but we leave a comment that may 
 	seem like an innocent advertisement. Now, we log on as an admin, and take a look at the
 	feedback page. If the admin is baited into activating the link, they will not receive any
